@@ -24,4 +24,14 @@ class BinarySearchTest {
         Assert.assertFalse(searchResult.isFound());
         Assert.assertEquals(-1, searchResult.getPosition());
     }
+
+    @Test
+    void ifItemIsFirstInSequence() {
+        int[] seq = {3,4,5};
+        int itemToFind = 3;
+        SearchResult searchResult = BinarySearch.search(itemToFind, seq);
+        Assert.assertTrue(searchResult.isFound());
+        Assert.assertEquals(0, searchResult.getPosition());
+    }
+    
 }
