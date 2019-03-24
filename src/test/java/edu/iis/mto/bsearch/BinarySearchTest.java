@@ -73,6 +73,16 @@ class BinarySearchTest {
         Assert.assertThat(-1, is(equalTo(searchResult.getPosition())));
     }
 
+    @Test
+    void ifNegativeNumberExistsInSequence(){
+        int[] seq = {-5, -1, 0, 8};
+        int itemToFind = -5;
+
+        SearchResult searchResult = BinarySearch.search(itemToFind, seq);
+        Assert.assertTrue(searchResult.isFound());
+        Assert.assertThat(1, is(equalTo(searchResult.getPosition())));
+    }
+
 
 
 
