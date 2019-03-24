@@ -52,6 +52,17 @@ class BinarySearchTest {
         Assert.assertEquals((seq.length -1)/2, searchResult.getPosition());
     }
 
+    @Test
+    void ifItemNotExistsInLongSequence() {
+        int[] seq = {3, 4, 5, 6, 7, 8, 9};
+        int itemToFind = 1;
+        SearchResult searchResult = BinarySearch.search(itemToFind, seq);
+        Assert.assertFalse(searchResult.isFound());
+        Assert.assertEquals(-1, searchResult.getPosition());
+    }
+
+
+
 
 
 
