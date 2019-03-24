@@ -25,7 +25,7 @@ class BinarySearchTest {
         int itemToFind = 3;
         SearchResult searchResult = BinarySearch.search(itemToFind, seq);
         Assert.assertTrue(searchResult.isFound());
-        Assert.assertEquals(0, searchResult.getPosition());
+        Assert.assertThat(0, is(equalTo(searchResult.getPosition())));
     }
 
     @Test
@@ -34,7 +34,7 @@ class BinarySearchTest {
         int itemToFind = 4;
         SearchResult searchResult = BinarySearch.search(itemToFind, seq);
         Assert.assertFalse(searchResult.isFound());
-        Assert.assertEquals(-1, searchResult.getPosition());
+        Assert.assertThat(-1, is(equalTo(searchResult.getPosition())));
     }
 
     @Test
@@ -43,7 +43,7 @@ class BinarySearchTest {
         int itemToFind = 3;
         SearchResult searchResult = BinarySearch.search(itemToFind, seq);
         Assert.assertTrue(searchResult.isFound());
-        Assert.assertEquals(0, searchResult.getPosition());
+        Assert.assertThat(0, is(equalTo(searchResult.getPosition())));
     }
 
     @Test
@@ -52,7 +52,7 @@ class BinarySearchTest {
         int itemToFind = 5;
         SearchResult searchResult = BinarySearch.search(itemToFind, seq);
         Assert.assertTrue(searchResult.isFound());
-        Assert.assertEquals(seq.length -1, searchResult.getPosition());
+        Assert.assertThat(seq.length -1, is(equalTo(searchResult.getPosition())));
     }
 
     @Test
@@ -61,7 +61,7 @@ class BinarySearchTest {
         int itemToFind = 6;
         SearchResult searchResult = BinarySearch.search(itemToFind, seq);
         Assert.assertTrue(searchResult.isFound());
-        Assert.assertEquals((seq.length -1)/2, searchResult.getPosition());
+        Assert.assertThat((seq.length -1)/2, is(equalTo(searchResult.getPosition())));
     }
 
     @Test
@@ -70,7 +70,7 @@ class BinarySearchTest {
         int itemToFind = 1;
         SearchResult searchResult = BinarySearch.search(itemToFind, seq);
         Assert.assertFalse(searchResult.isFound());
-        Assert.assertEquals(-1, searchResult.getPosition());
+        Assert.assertThat(-1, is(equalTo(searchResult.getPosition())));
     }
 
 
