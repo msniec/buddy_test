@@ -3,9 +3,21 @@ package edu.iis.mto.bsearch;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class BinarySearchTest {
+
+    @Test
+    void ifItemExistsInEmptySequence(){
+        int[] seq = new int[0];
+        int itemToFind = 9;
+
+        SearchResult searchResult = BinarySearch.search(itemToFind, seq);
+        Assert.assertThat(-1, is(equalTo(searchResult.getPosition())));
+    }
 
     @Test
     void ifItemExistsInSequence() {
