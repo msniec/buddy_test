@@ -6,10 +6,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BinarySearchTest {
-//    klasy rownowaznosci
 
     @Test
-    void ifNumberOfInputArgumentsEqualsOneReturnPosition() {
+    void ifItemExistReturnPosition() {
         int[] seq = {3};
         int itemToFind = 3;
         SearchResult searchResult = BinarySearch.search(itemToFind, seq);
