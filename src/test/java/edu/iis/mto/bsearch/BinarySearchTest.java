@@ -1,7 +1,9 @@
 package edu.iis.mto.bsearch;
 
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.jupiter.api.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
@@ -9,14 +11,16 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BinarySearchTest {
+    @Rule
+    public final ExpectedException exception = ExpectedException.none();
 
     @Test
     void ifItemExistsInEmptySequence(){
-        int[] seq = new int[0];
+        int[] seq = {};
         int itemToFind = 9;
 
-        SearchResult searchResult = BinarySearch.search(itemToFind, seq);
-        Assert.assertThat(-1, is(equalTo(searchResult.getPosition())));
+        exception.expect(IllegalArgumentException.class);
+        BinarySearch.search(itemToFind, seq);
     }
 
     @Test
