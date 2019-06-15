@@ -29,7 +29,7 @@ class BinarySearchTest {
         int itemToFind = 3;
         SearchResult searchResult = BinarySearch.search(itemToFind, seq);
         Assert.assertTrue(searchResult.isFound());
-        Assert.assertThat(0, is(equalTo(searchResult.getPosition())));
+        Assert.assertThat(2, is(equalTo(searchResult.getPosition())));
     }
 
     @Test
